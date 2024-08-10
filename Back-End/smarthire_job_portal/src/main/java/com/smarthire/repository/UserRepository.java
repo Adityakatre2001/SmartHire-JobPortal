@@ -3,7 +3,7 @@ package com.smarthire.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.smarthire.entites.User;
+import com.smarthire.entities.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {

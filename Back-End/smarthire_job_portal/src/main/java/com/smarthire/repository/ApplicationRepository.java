@@ -5,15 +5,15 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.smarthire.entites.Application;
+import com.smarthire.entities.JobApplication;
 
 @Repository
-public interface ApplicationRepository extends JpaRepository<Application, Long> {
+public interface ApplicationRepository extends JpaRepository<JobApplication, Long> {
     // Find applications by user ID
-    List<Application> findByUser_UserId(Long userId);
+    List<JobApplication> findByUser_UserId(Long userId);
 
     // Find applications by job posting ID
-    List<Application> findByJobPosting_JobId(Long jobPostingId);
+    List<JobApplication> findByJobPosting_JobId(Long jobPostingId);
    
 }
 
