@@ -4,5 +4,5 @@ import com.smarthire.entities.User;
 
 public class UserDTO extends User{
 
-	
+	private String name;
 }
