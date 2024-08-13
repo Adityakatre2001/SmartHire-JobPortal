@@ -1,6 +1,22 @@
 package com.smarthire.dtos;
 
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class AdminDTO {
-	private String email;
+
+	@NotNull
+	@JsonProperty(access = Access.READ_ONLY)
+    private Long userId;
+    private String username;
+    private String email;
+    private String role; // Admin, Employer, Applicant...
 
 }

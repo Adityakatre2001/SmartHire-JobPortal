@@ -8,6 +8,6 @@ import com.smarthire.entities.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     // Custom query methods can be added here if needed
-    User findByUsername(String username);
+	/* User findByUsername(String username); */
 }
 

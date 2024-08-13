@@ -9,33 +9,27 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
-public class ProfileDTO
- {
+public class CompanyDTO {
+
+
+	@NotNull
 	@JsonProperty(access = Access.READ_ONLY)
-    private Long profileId;
+	private Long companyId;
 
     @NotNull
-    @JsonProperty(access = Access.WRITE_ONLY)
-    private Long userId; // Reference to UserDTO
+    @Size(max = 100)
+    private String companyName;
 
     @NotNull
     @Size(max = 50)
-    private String contact;
+    private String industry;
 
-    private byte[] resume;
-
-    private List<String> skills;
-
-    @Size(max = 5000)
-    private String summary;
+    @NotNull
+    @Size(max = 255)
+    private String location;
 
     @Size(max = 5000)
-    private String experience;
-
-    
+    private String description;
 }
-
