@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.curved-image {
+  float: left; /* Align image to the left */
+  margin-right: 20px; /* Adjust margin as needed */
+  border-radius: 50%; /* Creates a circular shape; adjust as needed */
+  width: 150px; /* Set width of the image */
+  height: 150px; /* Set height of the image */
+  object-fit: cover; /* Ensures the image covers its container */
+  overflow: hidden; /* Ensures no overflow */
+}
