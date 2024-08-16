@@ -1,7 +1,7 @@
 import React from 'react';
-import './HeroSection.css';
+import '../Header/Header.css';
 
-function HeroSection() {
+function Header() {
   return (
     <section className="hero-section">
       <div className="hero-content">
@@ -16,4 +16,5 @@ function HeroSection() {
   );
 }
 
-export default HeroSection;
+
+export default Header;

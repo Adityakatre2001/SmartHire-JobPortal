@@ -7,14 +7,10 @@ function Footer() {
       <div className="footer-content">
         <h3>Contact Us</h3>
         <p>Email: contact@smarthire.com</p>
-        <p>Phone: +123 456 7890</p>
-        <p>Address: 123 Job Street, Employment City</p>
+        <p>Phone: +91 9970287642</p>
+        <p>Address: IACSD, Akurdi, Pune</p>
       </div>
-      <div className="footer-social">
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-        <a href="#">LinkedIn</a>
-      </div>
+      
       <p>&copy; 2024 SmartHire. All rights reserved.</p>
     </footer>
   );

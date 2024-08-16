@@ -4,6 +4,8 @@ package com.smarthire.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,7 @@ import com.smarthire.entities.JobApplication;
 import com.smarthire.repository.ApplicationRepository;
 
 @Service
+@Transactional
 public class ApplicationServiceImpl implements ApplicationService {
 
     @Autowired

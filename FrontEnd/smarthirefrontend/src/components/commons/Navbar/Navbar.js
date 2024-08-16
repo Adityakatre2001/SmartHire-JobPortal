@@ -1,7 +1,8 @@
 
 
 import React from 'react';
-import './css/Navbar.css';
+import '../Navbar/Navbar.css'
+
 //import smarthire from './logos/smarthire.png';
 
 function Navbar() {
@@ -16,11 +17,11 @@ function Navbar() {
       </div>
       <ul className="navbar-links">
         <li><a href="about" >About</a></li>
-        <li><a href="#jobs">Jobs</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#signin">Sign In</a></li> {/* Added Sign In link */}
-        <li><a href="#register">Register</a></li> {/* Added Register link */}
+        {/* <li><a href="#jobs">Jobs</a></li>
+        <li><a href="#testimonials">Testimonials</a></li> */}
+        <li><a href="contact">Contact</a></li>
+        <li><a href="signin">Sign In</a></li> {/* Added Sign In link */}
+        <li><a href="register">Register</a></li> {/* Added Register link */}
       </ul>
     </nav>
   );

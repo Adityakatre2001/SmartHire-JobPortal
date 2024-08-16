@@ -18,7 +18,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "user_credentials")
+@Table(name = "user")
 @Getter
 @Setter
 @NoArgsConstructor

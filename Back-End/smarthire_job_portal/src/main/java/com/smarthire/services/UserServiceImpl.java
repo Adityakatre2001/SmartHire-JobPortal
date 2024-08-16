@@ -55,7 +55,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
