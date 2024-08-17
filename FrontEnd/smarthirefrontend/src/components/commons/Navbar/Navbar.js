@@ -1,6 +1,7 @@
 
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../Navbar/Navbar.css'
 
 //import smarthire from './logos/smarthire.png';
@@ -10,18 +11,19 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-logo">
         {/* Clicking on SmartHire will reload the page */}
-        <a href="/" className="navbar-logo-link">
+        <Link to="/" className="navbar-logo-link">
         {/* <img src={smarthire} alt="SmartHire Logo" className="navbar-logo-img" /> */}
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/smarthire.png" /><h1>SmartHire</h1>
-        </a>
+        </Link>
       </div>
       <ul className="navbar-links">
-        <li><a href="about" >About</a></li>
-        {/* <li><a href="#jobs">Jobs</a></li>
-        <li><a href="#testimonials">Testimonials</a></li> */}
-        <li><a href="contact">Contact</a></li>
-        <li><a href="signin">Sign In</a></li> {/* Added Sign In link */}
-        <li><a href="register">Register</a></li> {/* Added Register link */}
+        
+         <li><Link to="admin">Admin  </Link></li>
+         <li><Link to="/employer">Recruiter</Link></li>
+         <li><Link to="/about" >About</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
+        <li><Link to ="/signin">Sign In</Link></li> {/* Added Sign In link */}
+        <li><Link to ="/register">Register</Link></li> {/* Added Register link */}
       </ul>
     </nav>
   );

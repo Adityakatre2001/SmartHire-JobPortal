@@ -24,7 +24,7 @@ import lombok.ToString;
 @ToString
 public class Company {
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long companyId;
 

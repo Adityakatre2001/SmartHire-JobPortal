@@ -1,3 +1,4 @@
+
 package com.smarthire.repository;
 
 import java.util.List;
@@ -12,4 +13,3 @@ public interface JobPostingRepository extends JpaRepository<JobPosting, Long> {
     // Find job postings by employer ID
     List<JobPosting> findByEmployer_CompanyId(Long employerId);
 }
-

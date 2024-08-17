@@ -1,12 +1,28 @@
 package com.smarthire.entities;
 
-import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapKey;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
-import java.util.Map;
-import java.util.HashMap;
-import lombok.*;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "job_posting")
@@ -16,40 +32,43 @@ import lombok.*;
 @AllArgsConstructor
 public class JobPosting {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long jobId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long jobId;
 
-    @NotNull
-    @Column(name = "post_date", nullable = false, updatable = false)
-    private LocalDate postDate;
 
-    @Size(max = 5000)
-    @Column(length = 5000)
-    private String jobDescription;
 
-    @NotNull
-    @ManyToOne
-    @JoinColumn(name = "company_id", nullable = false)
-    private Company employer;
-    
-    @NotNull
-    private Double salary;
 
-    @NotNull
-    @Size(max = 100)
-    @Column(nullable = false, length = 100)
-    private String jobTitle;
+	@NotNull
+	@Column(name = "post_date", nullable = false, updatable = false)
+	private LocalDate postDate;
 
-    @NotNull
-    @Size(max = 255)
-    @Column(nullable = false, length = 255)
-    private String jobLocation;
+	@Size(max = 5000)
+	@Column(length = 5000)
+	private String jobDescription;
 
-    @Column(name = "close_date")
-    private LocalDate closeDate;
+	@NotNull
+	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@JoinColumn(name = "company_id", nullable = false)
+	private Company employer;
 
-    @OneToMany(mappedBy = "jobPosting", cascade = CascadeType.ALL, orphanRemoval = true)
-    @MapKey(name = "applicationId")  
-    private Map<Long, JobApplication> applications = new HashMap<>();
+	@NotNull
+	private Double salary;
+
+	@NotNull
+	@Size(max = 100)
+	@Column(nullable = false, length = 100)
+	private String jobTitle;
+
+	@NotNull
+	@Size(max = 255)
+	@Column(nullable = false, length = 255)
+	private String jobLocation;
+
+	@Column(name = "close_date")
+	private LocalDate closeDate;
+
+	@OneToMany(mappedBy = "jobPosting", cascade = CascadeType.ALL, orphanRemoval = true)
+	@MapKey(name = "applicationId")  
+	private Map<Long, JobApplication> applications = new HashMap<>();
 }

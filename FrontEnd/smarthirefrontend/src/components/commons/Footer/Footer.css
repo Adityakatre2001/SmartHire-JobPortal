@@ -1,47 +1,47 @@
 .footer-section {
-  background-color: #f0f2f5; /* Matches the background of the rest of the site */
-  padding: 20px; /* Adds padding for some space inside the footer */
-  text-align: center; /* Centers the text */
-  border-top: 2px solid #ccc; /* Adds a border at the top of the footer */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-  font-family: Arial, sans-serif; /* Sets a clean, modern font */
-  position: relative; /* Removes fixed positioning */
+  background-color: #f0f2f5; 
+  padding: 20px; 
+  text-align: center; 
+  border-top: 2px solid #ccc; 
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+  font-family: Arial, sans-serif; 
+  position: relative; 
   width: 100%;
 }
 
 .footer-content {
-  margin-bottom: 15px; /* Adds space between the content and the copyright */
+  margin-bottom: 15px; 
 }
 
 .footer-content h3 {
-  font-size: 1.5rem; /* Increases the size of the heading */
-  color: #333; /* Sets a dark color for the heading */
-  margin-bottom: 10px; /* Adds space below the heading */
+  font-size: 1.5rem; 
+  color: #333; 
+  margin-bottom: 10px; 
 }
 
 .footer-content p {
-  font-size: 1rem; /* Sets a standard font size */
-  color: #666; /* Uses a subtle color for the text */
-  margin: 5px 0; /* Adds space between each line of text */
+  font-size: 1rem; 
+  color: #666; 
+  margin: 5px 0; 
 }
 
 .footer-section p {
-  margin: 0; /* Removes default margin */
-  color: #999; /* Sets a lighter color for the copyright notice */
-  font-size: 0.9rem; /* Slightly reduces the font size */
+  margin: 0; 
+  color: #999; 
+  font-size: 0.9rem; 
 }
 
 .footer-section a {
-  color: #333; /* Sets link color */
-  text-decoration: none; /* Removes underline from links */
+  color: #333; 
+  text-decoration: none; 
 }
 
 .footer-section a:hover {
-  text-decoration: underline; /* Adds underline on hover */
-  color: #000; /* Darkens link color on hover */
+  text-decoration: underline; 
+  color: #000; 
 }
 
-/* Add margin to the bottom of the main content */
+
 .home-container {
-  margin-bottom: 100px; /* Ensure enough space at the bottom for the footer */
+  margin-bottom: 100px; 
 }

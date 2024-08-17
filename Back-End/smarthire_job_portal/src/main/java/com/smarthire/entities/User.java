@@ -26,9 +26,10 @@ import lombok.ToString;
 @ToString(exclude = "password")
 public class User {
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
+   
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

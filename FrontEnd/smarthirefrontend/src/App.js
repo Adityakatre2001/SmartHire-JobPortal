@@ -2,9 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/commons/Navbar/Navbar';
 import Home from './components/commons/Home/Home';
+import Header from './components/commons/Header/Header';
+import Footer from './components/commons/Footer/Footer'
 import About from './components/pages/Home/js/About';
 import Contact from './components/pages/Home/js/Contact';
-import Footer from './components/commons/Footer/Footer';
+
 import './App.css';
 import UserList from './components/UserList';
 import UserForm from './components/UserForm';
@@ -18,11 +20,16 @@ function App() {
   return (
     <Router>
       <Navbar />
+      {/* <Header /> */}
       <div className="app-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<SignIn />} />
+          <Route path="/admin/registeradmin" element={<Register />} />
+          <Route path="/admin/registerrecruiter" element={<Register />} />
+          <Route path = "/employer" element={<SignIn />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/register" element={<Register />} />
           <Route path="/users" element={<UserList />} />
@@ -33,9 +40,10 @@ function App() {
         <Route path="/edit-company/:companyId" element={<CompanyForm />} />
         </Routes>
       </div>
-      <Footer />
+     <Footer />
     </Router>
   );
 }
 
 export default App;
+

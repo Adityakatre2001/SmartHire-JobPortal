@@ -19,4 +19,3 @@ public interface ApplicationRepository extends JpaRepository<JobApplication, Lon
     List<JobApplication> findByJobPosting(JobPosting jobPosting);
    
 }
-

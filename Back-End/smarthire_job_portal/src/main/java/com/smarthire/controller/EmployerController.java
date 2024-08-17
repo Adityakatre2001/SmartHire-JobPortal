@@ -19,7 +19,7 @@ import com.smarthire.dtos.JobPostDTO;
 import com.smarthire.services.EmployerService;
 
 @RestController
-@RequestMapping("/employer")
+@RequestMapping("/employers")
 @CrossOrigin("*")
 public class EmployerController {
 

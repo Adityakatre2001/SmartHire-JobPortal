@@ -6,13 +6,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.smarthire.entities.Message;
+import com.smarthire.entities.User;
 
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Long> {
-    // Find messages sent by a specific user
-    List<Message> findBySender_UserId(Long senderId);
+    
+    List<Message> findBySender(User senderId);
 
-    // Find messages received by a specific user
-    List<Message> findByReceiver_UserId(Long receiverId);
+    
+    List<Message> findByReceiver(User receiverId);
 }
 

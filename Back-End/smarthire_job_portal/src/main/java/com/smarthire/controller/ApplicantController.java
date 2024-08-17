@@ -18,7 +18,7 @@ import com.smarthire.dtos.ApplicantDTO;
 import com.smarthire.services.ApplicationService;
 
 @RestController
-@RequestMapping("/applicant")
+@RequestMapping("/applicants")
 @CrossOrigin("*")
 public class ApplicantController {
 

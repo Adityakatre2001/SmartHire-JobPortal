@@ -20,7 +20,7 @@ import com.smarthire.dtos.UserDTO;
 import com.smarthire.services.AdminService;
 
 	@RestController
-	@RequestMapping("/admin")
+	@RequestMapping("/admins")
 	@CrossOrigin("*")
 	public class AdminController {
 

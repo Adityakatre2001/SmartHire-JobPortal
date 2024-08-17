@@ -15,8 +15,9 @@ public class AdminDTO {
 	@NotNull
 	@JsonProperty(access = Access.READ_ONLY)
     private Long userId;
-    private String username;
+    
     private String email;
-    private String role; // Admin, Employer, Applicant...
+    private String password;
+    
 
 }
