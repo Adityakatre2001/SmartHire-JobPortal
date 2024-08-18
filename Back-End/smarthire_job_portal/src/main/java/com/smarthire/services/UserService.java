@@ -2,6 +2,7 @@ package com.smarthire.services;
 
 import java.util.List;
 
+import com.smarthire.dtos.AuthDTO;
 import com.smarthire.dtos.UserDTO;
 
 public interface UserService {
@@ -10,4 +11,5 @@ public interface UserService {
     void deleteUser(Long userId);
     UserDTO getUserById(Long userId);
     List<UserDTO> getAllUsers();
+    UserDTO authenticateUser(AuthDTO dto);
 }

@@ -1,4 +1,4 @@
-// src/components/UserList.js
+
 
 import React, { useEffect, useState } from 'react';
 import AdminService from '../services/AdminService';
@@ -12,7 +12,7 @@ function UserList() {
       .catch(error => console.error('Error fetching users:', error));
   }, []);
 
-  // Rest of the component logic
+  
 }
 
 export default UserList;

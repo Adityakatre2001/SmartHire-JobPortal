@@ -5,16 +5,19 @@ package com.smarthire.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.transaction.Transactional;
+
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.smarthire.dtos.ApplicantDTO;
 import com.smarthire.dtos.JobPostDTO;
+import com.smarthire.entities.Company;
 import com.smarthire.entities.JobPosting;
 import com.smarthire.repository.ApplicationRepository;
+import com.smarthire.repository.CompanyRepository;
 import com.smarthire.repository.JobPostingRepository;
 
 @Service
@@ -23,6 +26,9 @@ public class EmployerServiceImpl implements EmployerService {
 
     @Autowired
     private ModelMapper modelMapper;
+    
+    @Autowired
+    private CompanyRepository companyRepository;
 
     @Autowired
     private JobPostingRepository jobPostingRepository;
@@ -32,7 +38,12 @@ public class EmployerServiceImpl implements EmployerService {
 
     @Override
     public JobPostDTO createJobPosting(JobPostDTO jobPostingDTO) {
-        JobPosting jobPosting = modelMapper.map(jobPostingDTO, JobPosting.class);
+    	JobPosting jobPosting = modelMapper.map(jobPostingDTO, JobPosting.class);
+    	Company company = companyRepository.findById((jobPostingDTO.getEmployerId()))
+                .orElseThrow(() -> new RuntimeException("Company not found"));
+        
+        
+        jobPosting.setEmployer(company);
         JobPosting savedJobPosting = jobPostingRepository.save(jobPosting);
         return modelMapper.map(savedJobPosting, JobPostDTO.class);
     }

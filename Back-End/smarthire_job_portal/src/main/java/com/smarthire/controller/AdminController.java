@@ -29,6 +29,7 @@ import com.smarthire.services.AdminService;
 
 	    // User Endpoints
 
+	    
 	    @PostMapping("/users")
 	    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
 	        UserDTO createdUser = adminService.createUser(userDTO);

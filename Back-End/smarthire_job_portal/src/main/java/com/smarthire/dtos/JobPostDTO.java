@@ -26,7 +26,7 @@ public class JobPostDTO {
 
     @NotNull
     @JsonProperty(access = Access.WRITE_ONLY)
-    private Long companyId; // Reference to CompanyDTO
+    private Long employerId; // Changed to reflect it's a reference to Company by ID
 
     @NotNull
     private Double salary;
@@ -40,5 +40,4 @@ public class JobPostDTO {
     private String jobLocation;
 
     private LocalDate closeDate;
-
 }

@@ -6,11 +6,12 @@ import com.smarthire.repository.CompanyRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.transaction.Transactional;
+
 
 @Service
 @Transactional

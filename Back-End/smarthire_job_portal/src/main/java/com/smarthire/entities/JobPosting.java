@@ -7,7 +7,6 @@ import java.util.Map;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,6 +22,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "job_posting")
@@ -30,6 +30,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = "employer")
 public class JobPosting {
 
 	@Id
@@ -48,8 +49,8 @@ public class JobPosting {
 	private String jobDescription;
 
 	@NotNull
-	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-	@JoinColumn(name = "company_id", nullable = false)
+	@ManyToOne(cascade = CascadeType.MERGE) 
+	@JoinColumn(name = "companyId", nullable = false)
 	private Company employer;
 
 	@NotNull
@@ -65,10 +66,11 @@ public class JobPosting {
 	@Column(nullable = false, length = 255)
 	private String jobLocation;
 
+	
 	@Column(name = "close_date")
 	private LocalDate closeDate;
 
-	@OneToMany(mappedBy = "jobPosting", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "jobPosting", cascade = CascadeType.ALL)
 	@MapKey(name = "applicationId")  
 	private Map<Long, JobApplication> applications = new HashMap<>();
 }

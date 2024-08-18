@@ -1,4 +1,4 @@
-//package com.smarthire.services;
+
 
 //import java.util.List;
 //import java.util.stream.Collectors;
@@ -45,17 +45,20 @@
 
 package com.smarthire.services;
 
+import com.smarthire.dtos.AuthDTO;
 import com.smarthire.dtos.UserDTO;
 import com.smarthire.entities.User;
+import com.smarthire.exception.InvalidCredentialsException;
 import com.smarthire.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.transaction.Transactional;
+
 
 @Service
 @Transactional
@@ -67,6 +70,14 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
+	@Override
+	public UserDTO authenticateUser(AuthDTO authDto) {
+		User user=userRepository.findByEmailAndPassword(authDto.getEmail(), authDto.getPassword())
+				.orElseThrow(()-> new InvalidCredentialsException("invalid email and password"));
+		
+		return modelMapper.map(user, UserDTO.class);
+	}
+    
     @Override
     public UserDTO createUser(UserDTO userDTO) {
         User user = modelMapper.map(userDTO, User.class);

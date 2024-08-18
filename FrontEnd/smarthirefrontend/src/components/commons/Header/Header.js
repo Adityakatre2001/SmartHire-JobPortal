@@ -5,9 +5,9 @@ function Header() {
   return (
     <section className="hero-section">
       <div className="hero-content">
-        <h2>Your Dream Job Awaits</h2>
-        <p>Find the perfect job or hire the perfect candidate with SmartHire.</p>
-        <button className="btn-primary">Get Started</button>
+        
+        <p className = "para">Find the perfect job or hire the perfect candidate with SmartHire.</p>
+
       </div>
       <div className="hero-image">
         <img src="path/to/your/image.png" alt="Job Search" />
