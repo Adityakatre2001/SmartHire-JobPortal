@@ -23,7 +23,8 @@ function Navbar() {
          <li><Link to="/about" >About</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <li><Link to ="/signin">Sign In</Link></li> {/* Added Sign In link */}
-        <li><Link to ="/register">Register</Link></li> {/* Added Register link */}
+        <li><Link to ="/register">Register</Link></li> 
+        <li><Link to ="/logout">Logout</Link></li>{/* Added Register link */}
       </ul>
     </nav>
   );

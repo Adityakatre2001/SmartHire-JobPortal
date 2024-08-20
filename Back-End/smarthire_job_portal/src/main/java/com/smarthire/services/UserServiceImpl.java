@@ -72,6 +72,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserDTO authenticateUser(AuthDTO authDto) {
+		System.out.println("in UserDTo");
 		User user=userRepository.findByEmailAndPassword(authDto.getEmail(), authDto.getPassword())
 				.orElseThrow(()-> new InvalidCredentialsException("invalid email and password"));
 		

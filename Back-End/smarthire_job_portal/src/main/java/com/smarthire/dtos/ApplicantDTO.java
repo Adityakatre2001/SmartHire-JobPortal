@@ -24,8 +24,9 @@ public class ApplicantDTO {
 	    @NotNull
 	    @Size(max = 100)
 	    private String email;
-
-	    @NotNull
-	    @Size(max = 20)
-	    private String role; 
+		/*
+		 * @NotNull
+		 * 
+		 * @Size(max = 20) private String role;
+		 */ 
 }

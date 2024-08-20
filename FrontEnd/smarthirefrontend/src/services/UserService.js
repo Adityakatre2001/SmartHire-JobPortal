@@ -1,7 +1,7 @@
 
 
 import axios from 'axios';
-//import AuthService from './AuthService';
+
 
 const baseurl = 'http://localhost:8080/users';
 

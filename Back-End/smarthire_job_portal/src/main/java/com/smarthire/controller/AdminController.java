@@ -15,19 +15,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.smarthire.dtos.ApiResponse;
+import com.smarthire.dtos.AuthDTO;
 import com.smarthire.dtos.CompanyDTO;
 import com.smarthire.dtos.UserDTO;
 import com.smarthire.services.AdminService;
+import com.smarthire.services.UserService;
 
 	@RestController
-	@RequestMapping("/admins")
+	@RequestMapping("/admin")
 	@CrossOrigin("*")
 	public class AdminController {
 
 	    @Autowired
 	    private AdminService adminService;
+	    
+		@Autowired
+		private UserService userService;
 
-	    // User Endpoints
+	    
+	    @PostMapping("/signin")
+		public ResponseEntity<?> userSignIn(@RequestBody AuthDTO dto) {
+			try {
+				UserDTO respDto = userService.authenticateUser(dto);
+				return ResponseEntity.ok(respDto);
+
+			} catch (RuntimeException e) {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse(e.getMessage()));
+			}
+		}
 
 	    
 	    @PostMapping("/users")
