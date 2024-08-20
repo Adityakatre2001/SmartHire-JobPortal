@@ -3,13 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import AdminService from '../../../services/AdminService';
 import '../Admin/css/AdminDashboard.css';
 
-export default function AdminDashboard() {
+export default function Dashboard() {
   const [users, setUsers] = useState([]);
   const [companies, setCompanies] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    AdminService.getAllUsers().then((response) => {
+    AdminService.listAllUsers().then((response) => {
       setUsers(response.data);
     });
 
@@ -18,7 +18,7 @@ export default function AdminDashboard() {
     });
   }, []);
 
-  const editUser = (userId) => {
+  const updateUser = (userId) => {
     navigate(`/admin/users/edit/${userId}`);
   };
 
@@ -49,19 +49,21 @@ export default function AdminDashboard() {
             <tr>
               <th>ID</th>
               <th>Name</th>
+              <th>Role</th>
               <th>Email</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {users.map(user => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
+              <tr key={user.userId}>
+                <td>{user.userId}</td>
+                <td>{user.username}</td>
+                <td>{user.role}</td>
                 <td>{user.email}</td>
                 <td className="actions">
-                  <button className="edit-button" onClick={() => editUser(user.id)}>Edit</button>
-                  <button className="delete-button" onClick={() => deleteUser(user.id)}>Delete</button>
+                  <button className="edit-button" onClick={() => updateUser(user.userId)}>Edit</button>
+                  <button className="delete-button" onClick={() => deleteUser(user.userId)}>Delete</button>
                 </td>
               </tr>
             ))}
@@ -77,19 +79,21 @@ export default function AdminDashboard() {
             <tr>
               <th>ID</th>
               <th>Name</th>
+              <th>Industry</th>
               <th>Location</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {companies.map(company => (
-              <tr key={company.id}>
-                <td>{company.id}</td>
-                <td>{company.name}</td>
+              <tr key={company.companyId}>
+                <td>{company.companyId}</td>
+                <td>{company.companyName}</td>
+                <td>{company.industry}</td>
                 <td>{company.location}</td>
                 <td className="actions">
-                  <button className="edit-button" onClick={() => editCompany(company.id)}>Edit</button>
-                  <button className="delete-button" onClick={() => deleteCompany(company.id)}>Delete</button>
+                  <button className="edit-button" onClick={() => editCompany(company.companyId)}>Edit</button>
+                  <button className="delete-button" onClick={() => deleteCompany(company.companyId)}>Delete</button>
                 </td>
               </tr>
             ))}

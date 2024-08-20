@@ -49,7 +49,7 @@ public class JobPosting {
 	private String jobDescription;
 
 	@NotNull
-	@ManyToOne(cascade = CascadeType.MERGE) 
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "companyId", nullable = false)
 	private Company employer;
 

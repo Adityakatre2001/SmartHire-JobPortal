@@ -18,7 +18,7 @@ function Navbar() {
       </div>
       <ul className="navbar-links">
         
-         <li><Link to="admin">Admin  </Link></li>
+         <li><Link to="/admin">Admin  </Link></li>
          <li><Link to="/employer">Recruiter</Link></li>
          <li><Link to="/about" >About</Link></li>
         <li><Link to="/contact">Contact</Link></li>

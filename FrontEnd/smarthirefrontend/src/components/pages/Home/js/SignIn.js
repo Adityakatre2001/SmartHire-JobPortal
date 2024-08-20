@@ -37,11 +37,11 @@ export default function SignInForm() {
                     localStorage.setItem('userId', user.userId);
                     console.log('User role:', user.role);
                     if (user.role === 'ROLE_APPLICANT') {
-                        navigate('/JobPostings');
+                        navigate('/jobpostings');
                     } else if (user.role === 'ROLE_ADMIN') {
-                        navigate('/admin/Admind/Dashboard');
+                        navigate('/admin/dashboard');
                     } else if (user.role === 'ROLE_EMPLOYER') {
-                        navigate('/Employer/dashboard');
+                        navigate('/employer/dashboard');
                     }
                 } else {
                     alert('Failed to retrieve user information.');
