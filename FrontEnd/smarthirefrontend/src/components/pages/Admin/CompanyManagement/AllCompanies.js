@@ -12,7 +12,7 @@ function AllCompanies() {
 
     return (
         <div>
-            <h2>All Companies</h2>
+            <h2>All Company</h2>
             <ul>
                 {companies.map(company => (
                     <li key={company.id}>
